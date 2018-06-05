@@ -1,0 +1,77 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+
+
+<body>
+
+    <div class="newEntryButtonWrapper">
+        <a [routerLink]="['/toNonAdmin']" class="newEntryButton">
+            New Entry
+        </a>
+    </div>
+
+    <div class="logoutButtonWrapper">
+        <a [routerLink]="['/toLogin']" class="logoutButton">
+            Logout
+        </a>
+    </div>
+
+    <div style="text-align:center">
+
+        <h1>
+            Lookup
+        </h1>
+        <hr class="specialHr">
+
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <div class="overallWrapper">
+        <div>
+            <h4>Individual Query</h4>
+            <div class="outerWrapper" style="height: 300px;">
+
+                <div class="inputTextWrapper">
+
+                    <autocomplete-filter (selected)="receiveEmployee($event)">
+                    </autocomplete-filter>
+
+                </div>
+
+                <div class="inputTextWrapper">
+                    <datepicker (dateSelected)="receiveDate($event)" style="float: left;"></datepicker>
+                </div>
+
+                <div style="height: 60px;"></div>
+
+
+                <div style="padding-top: 20px;">
+                    <button class="submitButton" (click)="showQueryResults = true; hasNewData = true"> SEARCH </button>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 100px;"></div>
+
+        <div>
+            <h4>General Query</h4>
+            <div class="outerWrapper" style="height: 150px;">
+
+                <div style="padding-top: 45px;">
+                    <button class="submitButton" style="width: 260px;"> EXPORT TO EXCEL </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+
+    <div *ngIf="showQueryResults">
+        <query-result-table *ngIf="hasNewData" [user]="selectedUser" [date]="date" [entry]="entry"></query-result-table>
+    </div>
+
+    <footer-component></footer-component>
+
+</body>
