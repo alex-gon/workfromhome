@@ -58,6 +58,7 @@ import {
 
 import {CdkTableModule} from '@angular/cdk/table';
 import { RouterModule, Router } from '@angular/router';
+import { EntryService } from './shared/entry.service';
 
 
 @NgModule({
@@ -92,7 +93,7 @@ import { RouterModule, Router } from '@angular/router';
       { path: '**', redirectTo: 'toLogin', pathMatch: 'full'}
     ])
   ],
-  providers: [ UserService ],
+  providers: [ UserService, EntryService ],
   bootstrap: [ AppComponent ]
 })
 

@@ -10,6 +10,8 @@
                 <th colspan="3">
                     Evening
                 </th>
+                <th>
+                </th>
             </tr>
 
             <tr>
@@ -30,18 +32,21 @@
                 </th>
                 <th style="background-color: #888888;"> Note
                 </th>
+                <th style="background-color: #888888;"> Hours Worked
+                </th>
             </tr>
         </thead>
 
-        <tr *ngFor="let entry of entriesFromUser">
-            <td>{{ entry.date }}</td>
-            <td>{{ entry.morning_startTime }}</td>
-            <td>{{ entry.morning_didYesterday }}</td>
-            <td>{{ entry.morning_doingToday }}</td>
-            <td>{{ entry.morning_notes }}</td>
-            <td>{{ entry.evening_endTime }} </td>
-            <td>{{ entry.evening_didToday }}</td>
-            <td>{{ entry.evening_notes }}</td>
+        <tr *ngFor="let entry of entries">
+            <td>{{ entry.time_started }}</td>
+            <td>{{ entry.time_started }}</td>
+            <td>{{ entry.did_yesterday }}</td>
+            <td>{{ entry.doing_today }}</td>
+            <td>{{ entry.start_notes }}</td>
+            <td>{{ entry.time_finished}} </td>
+            <td>{{ entry.did_today }}</td>
+            <td>{{ entry.end_notes }}</td>
+            <td>{{ entry.hours_worked }}</td>
         </tr>
     </table>
 

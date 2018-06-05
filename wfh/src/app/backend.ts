@@ -3,6 +3,7 @@ import { Entry } from './shared/entry.model';
 
 export class InMemoryEntryService implements InMemoryDbService {
     createDb() {
+        let date = new Date()
         let users = [
             {
                 id: 1,
@@ -48,6 +49,7 @@ export class InMemoryEntryService implements InMemoryDbService {
                         evening_endTime: "4:00 PM",
                         evening_didToday:"wrotes some cool tests",
                         evening_notes:"waiting for x story to be done"
+                        
                     },
                     {
                         date:"Sat Jun 02 2018",
@@ -87,6 +89,57 @@ export class InMemoryEntryService implements InMemoryDbService {
                 ]
             }
         ];
-        return { users };
+        let entries = [
+            {
+                userId: "1",
+                full_name: "JJ Abrams",
+                time_started: date,
+                time_finished: date,
+                did_yesterday: "messages",
+                doing_today: "search",
+                did_today: "onononononon",
+                start_notes: "fasdf",
+                end_notes: "lambda",
+                hours_worked: 8
+            },
+            {
+                userId: "2",
+                full_name: "Gonzalo Alexander Stevens",
+                time_started: date,
+                time_finished: date,
+                did_yesterday: "planning, coding, reading",
+                doing_today: "taking nap, eating burito",
+                did_today: "moon walk",
+                start_notes: "How do I build feature?",
+                end_notes: "everything is good",
+                hours_worked: 8
+                
+            },
+            {
+                userId: "2",
+                full_name: "Gonzalo Alexander Stevens",
+                time_started: date,
+                time_finished: date,
+                did_yesterday: "something",
+                doing_today: "good work",
+                did_today: "tree climb",
+                start_notes: "hope",
+                end_notes: "good",
+                hours_worked: 8
+            },
+            {
+                userId: "2",
+                full_name: "Gonzalo Alexander Stevens",
+                time_started: date,
+                time_finished: date,
+                did_yesterday: "code",
+                doing_today: "code",
+                did_today: "code",
+                start_notes: "code",
+                end_notes: "code",
+                hours_worked: 8
+            }
+        ]
+        return { users, entries };
     }
 }

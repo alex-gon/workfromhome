@@ -12,7 +12,7 @@ import { Entry } from '../shared/entry.model';
 export class QueryResultTableComponent implements OnInit{
     @Input() user: User 
     @Input() date: string
-    @Input() entry: Entry
+    @Input() entries: Entry[]
 
 
     entriesFromUser: Entry[] = [];
@@ -22,14 +22,14 @@ export class QueryResultTableComponent implements OnInit{
 
         console.log(this.user, "user")
         console.log(this.date, "date")
-        console.log(this.entry, "entry")
+        //console.log(this.entry, "entry")
 
-        if (this.user && !this.date) {
-            this.entriesFromUser = this.user.entries
-        }
+        // if (this.user && !this.date) {
+        //     this.entriesFromUser = this.user.entries
+        // }
 
-        else if (this.user && this.date && this.entry){
-            this.entriesFromUser.push(this.entry);
-        }
+        // else if (this.user && this.date && this.entry){
+        //     this.entriesFromUser.push(this.entry);
+        // }
     }
 }
